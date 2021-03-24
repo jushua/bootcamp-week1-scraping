@@ -282,9 +282,9 @@ const scanningProfiles = async () => {
 //Comunication
 (function(){
     console.log('hola1')
-    chrome.runtime.onConnect.addListener(function(port) {
+    chrome.runtime.onConnect.addListener(async(port) => {
         console.log('hola2')
-        port.onMessage.addListener(function(msg) {
+        port.onMessage.addListener(async(msg) => {
           const { acction } = msg
           console.log('hola3')
           console.log(acction)
